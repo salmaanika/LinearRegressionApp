@@ -29,3 +29,9 @@ else:
 # Show Dataset
 st.subheader("Dataset Preview")
 st.write(df.head())
+
+
+# Model Feature Selection and Training
+numeric_cols = df.select_dtypes(include=np.number).columns.tolist()
+if len(numeric_cols) < 2:
+  st.error("Need at least Two Numeric Column for Regression")
