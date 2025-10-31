@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from sklearm.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression
 from sklearn.matrics import mean_squared_error, r2_score
 
 st.title("Linear Regression Web Application")
