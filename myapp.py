@@ -40,7 +40,7 @@ if len(numeric_cols) < 2:
 target = st.selectbox("Select Target Variable", numeric_cols)
 features = st.multiselect("Select input feature columns",[col for col in numeric_cols if col != target], default=([col for col in numeric_cols if col != target]))
 
-if len(features) == 0;
+if len(features) == 0:
 st.write("Please select at least one feature")
 st.stop()
 
