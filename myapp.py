@@ -26,3 +26,6 @@ else:
     st.warning("Please Upload a CSV File or Use The Example Dataset")
     st.stop()
     
+# Show Dataset
+st.subheader("Dataset Preview")
+st.write(df.head())
