@@ -38,4 +38,6 @@ if len(numeric_cols) < 2:
   st.stop()
 
 target = st.selectbox("Select Target Variable", numeric_cols)
+features = st.multiselect(Select Inout Feature Columns", [col for col in numeric_cols if col != target])
+
 
