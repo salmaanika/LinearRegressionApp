@@ -68,15 +68,16 @@ st.write(f"Mean Squared Error: {mse:.2f}")
 st.write(f"R^2 Score: {r2:.2f}")
 
 st.subheader("Make a Prediction")
+
 input_data = {}
 valid_input = True
 for feature in features:
-  st.text_input(f"Enter {feature} (numeric value)")
+  user_val = st.text_input(f"Enter {feature} (numeric value)")
   try:
     if user_val.strip()=="":
       valid_iput = False
     else:
       input_data[feature] = float(user_val)
-  except valueError:
+  except ValueError:
     valid_input = False
 
