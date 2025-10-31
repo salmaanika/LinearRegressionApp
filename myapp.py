@@ -5,6 +5,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+from sklearm.linear_model import LinearRegression
+from sklearn.matrics import mean_squared_error, r2_score
 
 st.title("Linear Regression Web Application")
 st.subheader("Application Built by Anika")
@@ -43,4 +45,25 @@ features = st.multiselect("Select input feature columns",[col for col in numeric
 if len(features) == 0:
   st.write("Please select at least one feature")
   st.stop()
+
+df = df[features + [target]].dropna()
+
+x = df[features]
+y = df[target]
+
+scaler = StandardScaler()
+x_scaled = scaler.fit_transform(x)
+
+x_train, x_test, y_train, y_test = train_test_split(x_scaled, y, test_size=0.2, random_state=42)
+
+model = LinearRegression()
+model.fit(x_train, y_train)
+
+y_pred = model.predict(x_test)
+mean_square_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+st.subheader("Model Evolution")
+st.write(f"Mean Squared Error: {mse:.2f}")
+st.write(f"R^2 Score: {r2:.2f}")
 
