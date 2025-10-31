@@ -86,6 +86,6 @@ if st.button("Predict"):
     input_df = pd.DataFrame([input_data])
     input_scaled = scaler.transform(input_df)
     predict = model.predict(input_scaled)
-    st.success(f"Predictd {target}: {prediction[0]: .2f}")
+    st.success(f"Predicted {target}: {prediction[0]: .2f}")
   else:
     st.error("Please Enter Valid Numeric Values for All Features Before Predicting.")
