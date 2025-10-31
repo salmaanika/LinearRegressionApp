@@ -1,8 +1,8 @@
 import streamlit as st
-import pandas as pd
+import pandas
 import numpy
 import matplotlib.pyplot as plt
-from sklear.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 st.title("Linear Regression Web Application")
