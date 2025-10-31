@@ -10,3 +10,4 @@ st.subheader("Application Built by Anika")
 
 # Sidebar
 st.sidebar.header("Upload CSV Data or Use Sample")
+use_example = st.sidebar.checkbox("Use Example Dataset")
