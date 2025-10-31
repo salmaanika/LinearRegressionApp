@@ -35,3 +35,7 @@ st.write(df.head())
 numeric_cols = df.select_dtypes(include=np.number).columns.tolist()
 if len(numeric_cols) < 2:
   st.error("Need at least Two Numeric Column for Regression")
+  st.stop()
+
+target = st.selectbox("Select Target Variable", numeric_cols)
+
